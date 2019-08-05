@@ -21,7 +21,7 @@ def load_data(messages_filepath, categories_filepath):
     # load categories dataset
     categories = pd.read_csv(categories_filepath)
     # merge datasets
-    df = messages.merge(categories,on='id',how='outer')
+    df = messages.merge(categories,on='id',how='inner')
     
     return df
 
@@ -32,10 +32,10 @@ def clean_data(df):
     clean and transform "df"   
     
     INPUT 
-        df  - loaded data frame from load_data()
+        df - loaded data frame from load_data()
         
     OUTPUT
-        df -transformed and cleaned  Dataframe
+        df - transformed and cleaned  Dataframe
         
     '''
     
